@@ -117,7 +117,7 @@ pinboard({
       attrs: {
         target: "_blank",
       },
-      text: "Mayor\'s Office of Black Male Engagement",
+      text: "Mayors Office of Black Male Engagement",
     },
   ],
   cyclomedia: {
