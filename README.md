@@ -1,4 +1,4 @@
-# immigrant-resource-finder
+# obme-resource-finder
 
 This is the sourcecode for the [Resources for immigrants](http://phila-resource-finder.s3-website-us-east-1.amazonaws.com/immigrant/prod/#/) app.
 
