@@ -17,12 +17,13 @@ import pinboard from '@phila/pinboard/src/main.js';
 import greeting from './general/greeting';
 
 // data-sources
-import immigrant from './data-sources/immigrant';
+import obme from './data-sources/obme';
 // var BASE_CONFIG_URL = 'https://cdn.jsdelivr.net/gh/cityofphiladelphia/mapboard-default-base-config@6126861722cee9384694742363d1661e771493b9/config.js';
 
+import expandCollapseContent from './components/ExpandCollapseContent.vue';
 import customGreeting from './components/customGreeting.vue';
 const customComps = {
-  // 'expandCollapseContent': expandCollapseContent,
+  'expandCollapseContent': expandCollapseContent,
   'customGreeting': customGreeting,
 };
 
@@ -34,7 +35,7 @@ pinboard({
     subtitle: 'Find a resource that helps Black men and boys in Philadelphia ',
     // logoSrc: require('@/assets/oia-logo.png'),
     // logoAlt: 'Office of Immigrant Affairs, City of Philadelphia',
-    type: 'immigrant',
+    type: 'obme',
   },
   gtag: {
     category: 'rf-oia',
@@ -59,21 +60,24 @@ pinboard({
   },
   greeting,
   locationInfo: {
-    siteName: 'organization_name',
+    siteName: function(item) {
+      return item.attributes.organization_name;
+    },
   },
   customComps,
   refine: {
     type: 'categoryField_array',
     value: function(item) {
-      return item.services_offered;
+      return item.attributes.services_offered;
     },
   },
   dataSources: {
-    immigrant,
+    obme,
   },
   router: {
     enabled: false,
   },
+  projection: '2272',
   geocoder: {
     url(input) {
       const inputEncoded = encodeURIComponent(input);
