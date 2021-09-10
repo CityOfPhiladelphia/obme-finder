@@ -3,13 +3,15 @@
     <div class="columns is-marginless">
       <div
         v-if="item.attributes.address"
-        class="column"
+        class="column columns"
       >
-        <font-awesome-icon icon="map-marker-alt" />
-        <span>
+        <div class="column is-1">
+          <font-awesome-icon icon="map-marker-alt" />
+        </div>
+        <div class="column is-11">
           {{ item.attributes.address }}<br>
           Philadelphia, PA {{ item.attributes.zip_code }}<br>
-        </span>
+        </div>
       </div>
 
       <div class="column">
@@ -54,26 +56,18 @@
     <div
       v-if="item.attributes.services_offered"
     >
-      <!-- class="columns" -->
-      <h3 class="title is-3">
+      <h3 class="title section-title is-3">
         Services offered
       </h3>
       <div class="columns is-multiline is-gapless">
-        <!-- <div
-          v-for="i in parseServiceList(item.attributes.services_offered)"
-          :key="i"
-          class="column is-half"
-        > -->
         {{ item.attributes.services_offered }}
-        <!-- {{ i }} -->
-        <!-- </div> -->
       </div>
     </div>
 
     <div
       v-if="item.attributes.tags && item.attributes.tags.length"
     >
-      <h3 class="title is-3 pt-2">
+      <h3 class="title section-title is-3 pt-2">
         Tags
       </h3>
       <div>
@@ -90,9 +84,6 @@ import SharedFunctions from '@phila/pinboard/src/components/mixins/SharedFunctio
 
 export default {
   name: 'ExpandCollapseContent',
-  components: {
-    // VerticalTableLight: () => import(/* webpackChunkName: "pvc_VerticalTable3CellsLight" */'@phila/vue-comps/src/components/VerticalTableLight.vue'),
-  },
   mixins: [ SharedFunctions ],
   props: {
     item: {
@@ -111,197 +102,6 @@ export default {
       }
       return values;
     },
-    // mainVerticalTableSlots() {
-    //   let slots = {
-    //     id: 'mainTable',
-    //     fields: [
-    //       {
-    //         label: 'eligibility',
-    //         labelType: 'i18n',
-    //         valueType: 'component1',
-    //       },
-    //     ],
-    //   };
-    //   if (this.$props.item.attributes.Language_Spoken != null) {
-    //     let row2 = {
-    //       label: 'languages.languagesSpoken',
-    //       labelType: 'i18n',
-    //       valueType: 'component2',
-    //     };
-    //     slots.fields.push(row2);
-    //   }
-    //
-    //   if (this.$props.item.attributes.translation_services != null) {
-    //     let row3 = {
-    //       label: 'languages.translationServices',
-    //       labelType: 'i18n',
-    //       valueType: 'component3',
-    //     };
-    //     slots.fields.push(row3);
-    //   }
-    //
-    //   if (this.days.length > 0) {
-    //     let newField = {
-    //       label: 'testingHours',
-    //       labelType: 'i18n',
-    //       valueType: 'component4',
-    //     };
-    //     slots.fields.push(newField);
-    //   }
-    //
-    //   if (this.daysRapid.length > 0) {
-    //     let newField = {
-    //       label: 'rapid.category',
-    //       labelType: 'i18n',
-    //       valueType: 'component5',
-    //     };
-    //     slots.fields.push(newField);
-    //   }
-    //
-    //   return slots;
-    // },
-    // mainVerticalTableOptions() {
-    //   return {
-    //     styles: {
-    //       th: {
-    //         'vertical-align': 'top',
-    //         'font-size': '14px',
-    //         'min-width': '40px !important',
-    //         'max-width': '50px !important',
-    //         'width': '10% !important',
-    //       },
-    //       td: {
-    //         'font-size': '14px !important',
-    //       },
-    //     },
-    //   };
-    // },
-
-    // days() {
-    //   let allDays = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ];
-    //   let theFields = [];
-    //   // let days = {};
-    //
-    //   let item = this.item;
-    //   let holidays = [];
-    //   let exceptions = [];
-    //   if (this.$config.holidays && this.$config.holidays.days) {
-    //     holidays = this.$config.holidays.days;
-    //   }
-    //   if (this.$config.holidays && this.$config.holidays.exceptions) {
-    //     exceptions = this.$config.holidays.exceptions;
-    //   }
-    //   // let siteName = this.getSiteName(this.item);
-    //
-    //   for (let [ index, day ] of allDays.entries()) {
-    //     let normallyOpen = item.attributes[day] != null;
-    //     let holidayToday = holidays.includes(day);
-    //     let yesterday = allDays[index-1];
-    //     let normallyOpenYesterday = item.attributes[yesterday] != null;
-    //     let holidayYesterday = holidays.includes(yesterday);
-    //     let siteIsException = exceptions.includes(this.getSiteName(this.item));
-    //
-    //     // if (this.item.attributes[day] != null){
-    //     if ((normallyOpen || (!siteIsException && holidayYesterday && normallyOpenYesterday)) && (!holidayToday || siteIsException)) {
-    //
-    //       let hours;
-    //       if ((normallyOpen && !holidayToday) || (normallyOpen && siteIsException)) {
-    //         hours = item.attributes[day];
-    //       } else if (!normallyOpen && holidayYesterday) {
-    //         hours = item.attributes[yesterday];
-    //       }
-    //
-    //       let dayObject = {
-    //         label: day,
-    //         labelType: 'i18n',
-    //         value: hours,
-    //         // valueType: 'i18n',
-    //       };
-    //       theFields.push(dayObject);
-    //     }
-    //   }
-    //   return theFields;
-    // },
-
-    // daysRapid() {
-    //   let allDays = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ];
-    //   let theFields = [];
-    //   // let days = {};
-    //
-    //   let item = this.item;
-    //   let holidays = [];
-    //   let exceptions = [];
-    //   if (this.$config.holidays && this.$config.holidays.days) {
-    //     holidays = this.$config.holidays.days;
-    //   }
-    //   if (this.$config.holidays && this.$config.holidays.exceptions) {
-    //     exceptions = this.$config.holidays.exceptions;
-    //   }
-    //   // let siteName = this.getSiteName(this.item);
-    //
-    //   for (let [ index, day ] of allDays.entries()) {
-    //     let normallyOpen = item.attributes[day+'_rapid_tests'] != null;
-    //     let holidayToday = holidays.includes(day);
-    //     let yesterday = allDays[index-1];
-    //     let normallyOpenYesterday = item.attributes[yesterday] != null;
-    //     let holidayYesterday = holidays.includes(yesterday);
-    //     let siteIsException = exceptions.includes(this.getSiteName(this.item));
-    //
-    //     // if (this.item.attributes[day] != null){
-    //     if ((normallyOpen || (!siteIsException && holidayYesterday && normallyOpenYesterday)) && (!holidayToday || siteIsException)) {
-    //
-    //       let hours;
-    //       if ((normallyOpen && !holidayToday) || (normallyOpen && siteIsException)) {
-    //         // let value = day + '_rapid_tests';
-    //         // console.log('day:', day, 'value:', value);
-    //         hours = item.attributes[day+'_rapid_tests'];
-    //       } else if (!normallyOpen && holidayYesterday) {
-    //         // let value = yesterday + '_rapid_tests';
-    //         // console.log('yesterday:', yesterday, 'value:', value);
-    //         hours = item.attributes[yesterday+'_rapid_tests'];
-    //       }
-    //
-    //       let dayObject = {
-    //         label: day,
-    //         labelType: 'i18n',
-    //         value: hours,
-    //         // valueType: 'i18n',
-    //       };
-    //       theFields.push(dayObject);
-    //     }
-    //   }
-    //   // console.log('theFields:', theFields);
-    //   return theFields;
-    // },
-
-    // component4VerticalTableSlots() {
-    //   return {
-    //     id: 'compTable1',
-    //     fields: this.days,
-    //   };
-    // },
-    // component5VerticalTableSlots() {
-    //   return {
-    //     id: 'compTable1',
-    //     fields: this.daysRapid,
-    //   };
-    // },
-    // component1VerticalTableOptions() {
-    //   return {
-    //     styles: {
-    //       th: {
-    //         'font-size': '14px',
-    //         'min-width': '45px !important',
-    //         'max-width': '50px !important',
-    //         'width': '25% !important',
-    //       },
-    //       td: {
-    //         'font-size': '14px !important',
-    //       },
-    //     },
-    //   };
-    // },
-
   },
   methods: {
     parseAddress(address) {
@@ -345,75 +145,79 @@ export default {
   padding-left: 2rem;
 }
 
-.location-item {
-  position: relative;
-  border-bottom: 1px solid black;
-  height:100%;
-
-  &:hover::after {
-    color: white;
-  }
-
-  .temp-close-section {
-    width: 100%;
-  }
-
-  .card-exclamation-holder {
-    padding: 20px;
-    background-color: #CC3000;
-    text-align: center;
-  }
-
-  .fa-icon-class {
-    color: white;
-    text-align: center;
-  }
-
-  .card-exclamation-details {
-    padding: 10px;
-    background-color: #F5D6CC;
-  }
-
-  .location-title {
-    cursor: pointer;
-    padding: 1rem;
-    margin-bottom: 0;
-    &:hover{
-      background: #2176d2;
-      color: white;
-    }
-  }
-
-  &::after{
-    position: absolute;
-    right:1rem;
-    top: 0;
-    content: '+';
-    font-weight: 900;
-    font-size:1.5rem;
-    z-index: 100;
-    color: color(dark-ben-franklin)
-  }
-  &.open{
-    h2{
-      color:white;
-      background-color: color(ben-franklin-blue);
-      font-weight: 900;
-    }
-    &::after{
-      content: '-';
-      color:white;
-    }
-  }
-  .location-content{
-    overflow: hidden;
-    height:0;
-
-    &.location-open{
-      padding: 1rem;
-      height: 100%;
-      overflow: initial;
-    }
-  }
+.section-title {
+  margin-bottom: .5rem !important;
 }
+
+// .location-item {
+//   position: relative;
+//   border-bottom: 1px solid black;
+//   height:100%;
+//
+//   &:hover::after {
+//     color: white;
+//   }
+//
+//   .temp-close-section {
+//     width: 100%;
+//   }
+//
+//   .card-exclamation-holder {
+//     padding: 20px;
+//     background-color: #CC3000;
+//     text-align: center;
+//   }
+//
+//   .fa-icon-class {
+//     color: white;
+//     text-align: center;
+//   }
+//
+//   .card-exclamation-details {
+//     padding: 10px;
+//     background-color: #F5D6CC;
+//   }
+
+  // .location-title {
+  //   cursor: pointer;
+  //   padding: 1rem;
+  //   margin-bottom: 0;
+  //   &:hover{
+  //     background: #2176d2;
+  //     color: white;
+  //   }
+  // }
+  //
+  // &::after{
+  //   position: absolute;
+  //   right:1rem;
+  //   top: 0;
+  //   content: '+';
+  //   font-weight: 900;
+  //   font-size:1.5rem;
+  //   z-index: 100;
+  //   color: color(dark-ben-franklin)
+  // }
+  // &.open{
+  //   h2{
+  //     color:white;
+  //     background-color: color(ben-franklin-blue);
+  //     font-weight: 900;
+  //   }
+  //   &::after{
+  //     content: '-';
+  //     color:white;
+  //   }
+  // }
+  // .location-content{
+  //   overflow: hidden;
+  //   height:0;
+  //
+  //   &.location-open{
+  //     padding: 1rem;
+  //     height: 100%;
+  //     overflow: initial;
+  //   }
+  // }
+// }
 </style>
