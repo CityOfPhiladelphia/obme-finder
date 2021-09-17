@@ -14,8 +14,8 @@
       class="main-area"
     >
       <h3>About this directory</h3>
-      <p>This tool can help you find resources that help Black males in Philadelphia. You can:</p>
-      <div class="callout">
+      <p>This tool can help you find resources that assist Black males in Philadelphia. You can:</p>
+      <div class="callout list-div">
         <ul>
           <li>Browse the list of resources.</li>
           <li>Search by address or keyword.</li>
@@ -54,7 +54,6 @@ export default {
         return true;
       }
       return false;
-
     },
     calloutOptions() {
       return {};
@@ -93,143 +92,88 @@ export default {
         `;
     },
   },
-  watch: {
-    database() {
-      let subsections = this.getCounts();
-      this.subsections = subsections;
-      this.$store.commit('setSubsections', subsections);
-    },
-  },
-  mounted() {
-    this.sections = this.$config.sections;
-  },
-  methods: {
-    getCounts() {
-      // console.log('customGreeting.vue getCounts is running');
-      const refineData = this.database;
-      // const refineData = this.sources[this.$appType].data.rows;
-
-      let service = '';
-
-      // console.log('in getRefineSearchList, refineData:', refineData);
-      refineData.forEach((arrayElem) => {
-        // console.log('arrayElem:', arrayElem);
-        if (arrayElem.services_offered) {
-          service += `${arrayElem.services_offered},`;
-        } else if (arrayElem.attributes.CATEGORY) {
-          service += `${arrayElem.attributes.CATEGORY},`;
-        }
-      });
-
-      // TODO: break this into smaller chunks
-      // let serviceArray = service.split(/(,|;)/);
-      let serviceArray = service.split(',');
-      serviceArray = serviceArray.map(s => s.trim());
-
-      // const uniqArray = [ ...new Set(serviceArray) ];
-      // console.log('serviceArray:', serviceArray, 'uniqArray:', uniqArray);
-      //
-      // // clean up any dangling , or ;
-      // let uniq = uniqArray.filter(a => a.length > 2);
-      //
-      // uniq.filter(Boolean); // remove empties
-
-      let countObject = serviceArray.reduce(function (acc, curr) {
-        if (typeof acc[curr] == 'undefined') {
-          acc[curr] = 1;
-        } else {
-          acc[curr] += 1;
-        }
-        return acc;
-      }, {});
-
-      return countObject;
-    },
-  },
+  // watch: {
+  //   database() {
+  //     let subsections = this.getCounts();
+  //     this.subsections = subsections;
+  //     this.$store.commit('setSubsections', subsections);
+  //   },
+  // },
+  // mounted() {
+  //   this.sections = this.$config.sections;
+  // },
+  // methods: {
+  //   getCounts() {
+  //     console.log('customGreeting.vue getCounts is running');
+  //     const refineData = this.database;
+  //     // const refineData = this.sources[this.$appType].data.rows;
+  //
+  //     let service = '';
+  //
+  //     // console.log('in getRefineSearchList, refineData:', refineData);
+  //     refineData.forEach((arrayElem) => {
+  //       // console.log('arrayElem:', arrayElem);
+  //       if (arrayElem.services_offered) {
+  //         service += `${arrayElem.services_offered},`;
+  //       } else if (arrayElem.attributes.CATEGORY) {
+  //         service += `${arrayElem.attributes.CATEGORY},`;
+  //       }
+  //     });
+  //
+  //     // TODO: break this into smaller chunks
+  //     // let serviceArray = service.split(/(,|;)/);
+  //     let serviceArray = service.split(',');
+  //     serviceArray = serviceArray.map(s => s.trim());
+  //
+  //     // const uniqArray = [ ...new Set(serviceArray) ];
+  //     // console.log('serviceArray:', serviceArray, 'uniqArray:', uniqArray);
+  //     //
+  //     // // clean up any dangling , or ;
+  //     // let uniq = uniqArray.filter(a => a.length > 2);
+  //     //
+  //     // uniq.filter(Boolean); // remove empties
+  //
+  //     let countObject = serviceArray.reduce(function (acc, curr) {
+  //       if (typeof acc[curr] == 'undefined') {
+  //         acc[curr] = 1;
+  //       } else {
+  //         acc[curr] += 1;
+  //       }
+  //       return acc;
+  //     }, {});
+  //
+  //     return countObject;
+  //   },
+  // },
 };
 </script>
 
 <style scoped>
 
-  .main-area {
-    /* padding: 1rem; */
-  }
-
   .container {
     margin-bottom: 1rem;
   }
 
-  .custom-callout {
-    border-style: solid;
-    border-width: 1px;
-    padding: 10px;
+  .list-div {
+    margin-bottom: 1rem;
   }
 
   .open-list-button {
     text-transform: uppercase;
   }
 
-  .exclamation-holder {
+  /* .exclamation-holder {
     padding: 1rem;
     margin-bottom: 0px;
-  }
+  } */
 
-  .fa-icon-class {
+  /* .fa-icon-class {
     margin: 0 auto;
     display: block;
-  }
+  } */
 
-  .exclamation-details {
+  /* .exclamation-details {
     margin-left: 14px;
-  }
-
-  .mb-panel-topics-greeting {
-    padding-top: 20px;
-  }
-
-  /* .greeting {
-    font-size: 20px;
-    color: #444;
-    padding: 14px;
   } */
 
-  /* ul {
-    margin-bottom: 6px;
-  } */
-
-  /* h1 {
-    font-size: 20px;
-  }
-
-  h2 {
-    font-size: 16px;
-  } */
-
-  /* .custom-greeting {
-    padding: 1rem;
-  } */
-
-  /* .greeting-error {
-    border-left-color: #ff0000;
-  } */
-
-  /* .custom-section {
-    margin-left: 8px;
-    margin-top: 4px;
-  } */
-
-  /* .custom-ul {
-    margin-left: 4rem;
-    font-size: 14px;
-  } */
-
-  /*medium*/
-  /*make this scroll on medium screens*/
-  /*REVIEW this is a little hacky. the 120px shouldn't be hard-coded.*/
-  /* @media screen and (min-width: 750px) {
-    .mb-panel-topics-greeting {
-      height: calc(100vh - 120px);
-      overflow: auto;
-    }
-  } */
 </style>
