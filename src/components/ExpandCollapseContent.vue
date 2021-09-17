@@ -71,8 +71,8 @@
         Tags
       </h3>
       <div>
-        {{ item.attributes.tags }}
-        <!-- {{ parseTagsList(item.attributes.tags) }} -->
+        <!-- {{ item.attributes.tags }} -->
+        {{ parseTagsList(item.attributes.tags) }}
       </div>
     </div>
   </div>
@@ -91,16 +91,6 @@ export default {
       default: function(){
         return {};
       },
-    },
-  },
-  computed: {
-    languagesSpoken() {
-      let values = [];
-      if (this.$props.item.attributes.Language_Spoken) {
-        // console.log('in languagesSpoken computed, this.$props.item.attributes.Language_Spoken:', this.$props.item.attributes.Language_Spoken);
-        values = this.$props.item.attributes.Language_Spoken.split(', ');
-      }
-      return values;
     },
   },
   methods: {
@@ -126,7 +116,8 @@ export default {
       return formattedService;
     },
     parseTagsList(list) {
-      const formattedTags = list;
+      const formattedTags = list.toLowerCase();
+      console.log('parseTagsList is running, list:', list, 'formattedTags:', formattedTags);
       // const formattedTags = list.slice().sort().join(", ");
       return formattedTags;
     },

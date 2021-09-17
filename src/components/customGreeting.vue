@@ -14,7 +14,7 @@
       class="main-area"
     >
       <h3>About this directory</h3>
-      <p>This tool can help you find resources that help Black males in Philadelphia. You can:</p>
+      <p>This tool can help you find resources that assist Black males in Philadelphia. You can:</p>
       <div class="callout list-div">
         <ul>
           <li>Browse the list of resources.</li>

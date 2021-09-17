@@ -94,7 +94,7 @@ pinboard({
       attrs: {
         target: "_blank",
       },
-      text: "City Of Philadelphia",
+      text: "City of Philadelphia",
       // text: "cityOfPhiladelphia",
     },
 
@@ -121,7 +121,7 @@ pinboard({
       attrs: {
         target: "_blank",
       },
-      text: "Mayors Office of Black Male Engagement",
+      text: "Mayor's Office of Black Male Engagement",
     },
   ],
   cyclomedia: {
