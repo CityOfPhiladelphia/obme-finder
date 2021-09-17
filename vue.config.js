@@ -1,6 +1,7 @@
 module.exports = {
   filenameHashing: false,
-  publicPath: '/obme/dev/',
+  publicPath: '/obme/resources/',
+  // publicPath: '/obme/dev/',
   configureWebpack: {
     optimization: {
       splitChunks: {
