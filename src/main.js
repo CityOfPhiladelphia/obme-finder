@@ -71,6 +71,12 @@ pinboard({
       return item.attributes.services_offered;
     },
   },
+  tags: {
+    type: 'tagLocation',
+    location: function(item) {
+      return item.attributes.tags;
+    },
+  },
   dataSources: {
     obme,
   },
