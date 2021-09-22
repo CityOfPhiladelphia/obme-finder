@@ -74,7 +74,17 @@ pinboard({
   tags: {
     type: 'tagLocation',
     location: function(item) {
-      return item.attributes.tags;
+      let services = [];
+      let tags = [];
+      if (item.attributes.services_offered) {
+        services = item.attributes.services_offered.split(', ');
+      }
+      if (item.attributes.tags) {
+        tags = item.attributes.tags.split(', ');
+      }
+      let mergeResult = [ ...services, ...tags ];
+      // console.log('running tagLocation function, item:', item, 'mergeResult:', mergeResult);
+      return mergeResult;
     },
   },
   dataSources: {
