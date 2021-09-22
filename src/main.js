@@ -116,7 +116,7 @@ pinboard({
 
     {
       type: "native",
-      href: "#",
+      href: "/obme/resources",
       text: "About",
       // text: "about",
     },
