@@ -24,7 +24,7 @@
         </ul>
       </div>
       <h3>Suggest a resource</h3>
-      <p>To learn about adding an organization to the directory, email <a href="mailto:obme@phila.gov">obme@phila.gov</a>.</p>
+      <p>Fill out <a href="https://phila.formstack.com/forms/obme_directory_organization_form">our request form</a> to add your organization to the directory.</p>
     </div> <!-- end of main-area -->
   </div>
 </template>
