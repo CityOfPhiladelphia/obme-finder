@@ -1,8 +1,5 @@
 module.exports = {
-  filenameHashing: false,
   publicPath: process.env.VUE_APP_PUBLICPATH,
-  // publicPath: '/obme/resources/',
-  // publicPath: '/obme/dev/',
   configureWebpack: {
     optimization: {
       splitChunks: {
@@ -48,7 +45,7 @@ module.exports = {
   // //   },
   // // },
   // },
-  assetsDir: 'static',
+  // assetsDir: 'static',
   transpileDependencies: [
     // can be string or regex
     '@phila/pinboard',
