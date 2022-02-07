@@ -1,6 +1,7 @@
 module.exports = {
   filenameHashing: false,
-  publicPath: '/obme/resources/',
+  publicPath: process.env.VUE_APP_PUBLICPATH,
+  // publicPath: '/obme/resources/',
   // publicPath: '/obme/dev/',
   configureWebpack: {
     optimization: {
