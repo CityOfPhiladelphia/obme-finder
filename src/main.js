@@ -32,7 +32,7 @@ pinboard({
     type: 'obme',
   },
   gtag: {
-    category: 'rf-oia',
+    category: 'rf-obme',
   },
   resetDataOnGeocode: true,
   addressInput: {
