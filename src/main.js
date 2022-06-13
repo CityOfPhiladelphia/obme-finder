@@ -39,7 +39,8 @@ pinboard({
     placeholder: 'Search by address or keyword',
   },
   searchBar: {
-    dropdown: [
+    placeholder: 'Search by address or keyword',
+    searchTypes: [
       'address',
       'keyword',
     ],
