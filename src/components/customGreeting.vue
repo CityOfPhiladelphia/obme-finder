@@ -162,18 +162,8 @@ export default {
     text-transform: uppercase;
   }
 
-  /* .exclamation-holder {
-    padding: 1rem;
-    margin-bottom: 0px;
-  } */
-
-  /* .fa-icon-class {
-    margin: 0 auto;
-    display: block;
-  } */
-
-  /* .exclamation-details {
-    margin-left: 14px;
-  } */
+  .custom-greeting {
+    padding: 1.5rem;
+  }
 
 </style>
