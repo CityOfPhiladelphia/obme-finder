@@ -4,7 +4,7 @@
   >
     <div class="has-text-centered container">
       <button
-        class="button open-list-button is-primary"
+        class="button open-list-button"
         @click="$emit('view-list')"
         v-html="$t('app.viewList')"
       />
@@ -160,20 +160,16 @@ export default {
 
   .open-list-button {
     text-transform: uppercase;
+    background-color: #0f4d90;
+    color: #ffffff;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 17px;
+    padding-bottom: 17px;
   }
 
-  /* .exclamation-holder {
-    padding: 1rem;
-    margin-bottom: 0px;
-  } */
-
-  /* .fa-icon-class {
-    margin: 0 auto;
-    display: block;
-  } */
-
-  /* .exclamation-details {
-    margin-left: 14px;
-  } */
+  .custom-greeting {
+    padding: 1.5rem;
+  }
 
 </style>
