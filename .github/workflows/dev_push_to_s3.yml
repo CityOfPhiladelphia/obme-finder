@@ -6,7 +6,7 @@ name: dev Push to S3
 on:
   push:
     branches:
-      - pinboard-upgrades
+      - main
 
 jobs:
   build:
