@@ -44,6 +44,11 @@ pinboard({
   gtag: {
     category: 'rf-obme',
   },
+  allowPrint: true,
+  showBuffers: true,
+  resetDataOnGeocode: true,
+  retractableRefine: false,
+  dropdownRefine: false,
   resetDataOnGeocode: true,
   addressInput: {
     placeholder: 'Search by address or keyword',
