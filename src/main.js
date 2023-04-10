@@ -49,7 +49,6 @@ pinboard({
   resetDataOnGeocode: true,
   retractableRefine: false,
   dropdownRefine: false,
-  resetDataOnGeocode: true,
   addressInput: {
     placeholder: 'Search by address or keyword',
   },
