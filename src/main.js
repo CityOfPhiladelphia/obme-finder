@@ -36,6 +36,7 @@ const customComps = {
 
 
 pinboard({
+  publicPath: process.env.VUE_APP_PUBLICPATH,
   app: {
     title: 'Resources for Black males',
     subtitle: 'Find a resource that helps Black men and boys in Philadelphia ',
