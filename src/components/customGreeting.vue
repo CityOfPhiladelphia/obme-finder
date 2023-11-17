@@ -148,28 +148,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
-  .container {
-    margin-bottom: 1rem;
-  }
-
-  .list-div {
-    margin-bottom: 1rem;
-  }
-
-  .open-list-button {
-    text-transform: uppercase;
-    background-color: #0f4d90;
-    color: #ffffff;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-top: 17px;
-    padding-bottom: 17px;
-  }
-
-  .custom-greeting {
-    padding: 1.5rem;
-  }
+@import "../../node_modules/@phila/pinboard/src/assets/scss/customGreeting.scss";
 
 </style>

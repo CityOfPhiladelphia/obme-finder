@@ -1,6 +1,10 @@
 <template>
   <div :class="isMobile ? 'main-content-mobile' : 'main-content'">
-    <div class="columns">
+    <print-share-section
+      :item="item"
+    />
+
+    <div class="columns top-section">
       <div class="column is-6">
         <div
           v-if="item.attributes.address"
@@ -114,9 +118,13 @@
 <script>
 
 import SharedFunctions from '@phila/pinboard/src/components/mixins/SharedFunctions.vue';
+import PrintShareSection from '@phila/pinboard/src/components/PrintShareSection';
 
 export default {
   name: 'ExpandCollapseContent',
+  components: {
+    PrintShareSection,
+  },
   mixins: [ SharedFunctions ],
   props: {
     item: {
