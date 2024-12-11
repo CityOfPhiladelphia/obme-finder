@@ -117,15 +117,15 @@
 
 <script>
 
-import SharedFunctions from '@phila/pinboard/src/components/mixins/SharedFunctions.vue';
-import PrintShareSection from '@phila/pinboard/src/components/PrintShareSection';
+// import SharedFunctions from '@phila/pinboard/src/components/mixins/SharedFunctions.vue';
+// import PrintShareSection from '@phila/pinboard/src/components/PrintShareSection';
 
 export default {
   name: 'ExpandCollapseContent',
-  components: {
-    PrintShareSection,
-  },
-  mixins: [ SharedFunctions ],
+  // components: {
+  //   PrintShareSection,
+  // },
+  // mixins: [ SharedFunctions ],
   props: {
     item: {
       type: Object,
