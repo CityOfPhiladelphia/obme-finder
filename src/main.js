@@ -21,8 +21,8 @@ import { faMinus as farMinus } from '@fortawesome/pro-regular-svg-icons/faMinus'
 library.add(farAngleDown, farAngleUp, farTimes, farPlus, farMinus);
 
 // import pinboard
-import pinboard from '@phila/pinboard';
-// import pinboard from '../node_modules/@phila/pinboard/src/main.js';
+// import pinboard from '@phila/pinboard';
+import pinboard from '../node_modules/@phila/pinboard/src/main.js';
 import '../node_modules/@phila/pinboard/dist/style.css';
 
 // data-sources
@@ -76,6 +76,7 @@ let $config = {
     },
   },
   locationInfo: {
+    siteNameField: 'organization_name',
     siteName: function(item) {
       return item.properties.organization_name;
     },
