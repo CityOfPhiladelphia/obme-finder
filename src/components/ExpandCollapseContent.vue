@@ -1,9 +1,5 @@
 <script setup>
 
-// import SharedFunctions from '@phila/pinboard/src/components/mixins/SharedFunctions.vue';
-// import PrintShareSection from '@phila/pinboard/src/components/PrintShareSection';
-
-
 const props = defineProps({
   item: {
     type: Object,
@@ -48,7 +44,7 @@ const parseTagsList = (list) => {
 </script>
 
 <template>
-  <div :class="isMobile ? 'main-content-mobile' : 'main-content'">
+  <div class='main-ec-content'>
     <print-share-section
       :item="item"
     />
