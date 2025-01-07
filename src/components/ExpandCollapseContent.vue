@@ -163,19 +163,3 @@ const parseTagsList = (list) => {
     </div>
   </div>
 </template>
-
-<style lang="scss">
-
-// .td-style {
-//   font-size: 14px !important;
-// }
-//
-// .td-textbox {
-//   padding-left: 2rem;
-// }
-//
-// .section-title {
-//   margin-bottom: .5rem !important;
-// }
-
-</style>

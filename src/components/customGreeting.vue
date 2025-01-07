@@ -14,7 +14,7 @@ const props = defineProps({
 
 <template>
   <div
-    class="custom-greeting content"
+    class="main-greeting"
   >
     <div class="has-text-centered container">
       <button
@@ -35,7 +35,7 @@ const props = defineProps({
     >
       <h3>About this directory</h3>
       <p>This tool can help you find resources that assist Black males in Philadelphia. You can:</p>
-      <div class="callout list-div">
+      <div class="intro-list">
         <ul>
           <li>Browse the list of resources.</li>
           <li>Search by address or keyword.</li>
@@ -48,20 +48,3 @@ const props = defineProps({
     </div> <!-- end of main-area -->
   </div>
 </template>
-
-<style lang="scss" scoped>
-
-.greeting-button {
-  background-color: #0f4d90 !important;
-  border-color: #0f4d90 !important;
-  font-size: 1rem;
-  color: white;
-  cursor: pointer;
-  margin: 1rem;
-}
-
-.greeting-button:hover {
-  background-color: #444444 !important;
-}
-
-</style>
