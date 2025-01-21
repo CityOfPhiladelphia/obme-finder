@@ -45,9 +45,6 @@ const parseTagsList = (list) => {
 
 <template>
   <div class='main-ec-content'>
-    <print-share-section
-      :item="item"
-    />
 
     <div class="columns top-section">
       <div class="column is-6">
