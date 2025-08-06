@@ -32,6 +32,8 @@ import obme from './data-sources/obme';
 
 import expandCollapseContent from './components/ExpandCollapseContent.vue';
 import customGreeting from './components/customGreeting.vue';
+
+import { markRaw } from 'vue';
 const customComps = markRaw({
   'expandCollapseContent': expandCollapseContent,
   'customGreeting': customGreeting,
@@ -47,7 +49,7 @@ let $config = {
   },
   publicPath: import.meta.env.VITE_PUBLICPATH,
   app: {
-    title: 'Resources for Black males',
+    title: 'Resources for Black Males',
     subtitle: 'Find a resource that helps Black men and boys in Philadelphia ',
     type: 'obme',
   },
