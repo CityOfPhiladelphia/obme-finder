@@ -21,11 +21,11 @@ import { faMinus as farMinus } from '@fortawesome/pro-regular-svg-icons/faMinus'
 library.add(farAngleDown, farAngleUp, farTimes, farPlus, farMinus);
 
 // use these if running off unlinked package
-import pinboard from '@phila/pinboard';
-import '../node_modules/@phila/pinboard/dist/style.css';
+// import pinboard from '@phila/pinboard';
+// import '../node_modules/@phila/pinboard/dist/style.css';
 // OR
 // use this if running off linked package
-// import pinboard from '../node_modules/@phila/pinboard/src/main.js';
+import pinboard from '../node_modules/@phila/pinboard/src/main.js';
 
 // data-sources
 import obme from './data-sources/obme';
@@ -33,7 +33,6 @@ import obme from './data-sources/obme';
 import expandCollapseContent from './components/ExpandCollapseContent.vue';
 import customGreeting from './components/customGreeting.vue';
 
-import { markRaw } from 'vue';
 const customComps = markRaw({
   'expandCollapseContent': expandCollapseContent,
   'customGreeting': customGreeting,
