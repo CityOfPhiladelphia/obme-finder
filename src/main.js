@@ -148,7 +148,7 @@ let $config = {
 
     {
       type: "native",
-      href: "https://www.phila.gov/feedback/",
+      href: "https://phila.formstack.com/forms/black_male_resource_finder_feedback",
       attrs: {
         target: "_blank",
       },
